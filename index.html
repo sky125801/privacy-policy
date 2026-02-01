@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密匣 - Privacy Policy / 隐私政策</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f4f4f9; }
+        .container { text-align: center; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #333; font-size: 1.5rem; }
+        .lang-list { margin-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        a { text-decoration: none; color: #007aff; font-size: 0.9rem; }
+        a:hover { text-decoration: underline; }
+        .loading { margin-bottom: 10px; color: #666; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="status" class="loading">Detecting language... / 正在检测语言...</div>
+    <h1>Privacy Policy / 隐私政策</h1>
+    
+    <div class="lang-list">
+        <a href="privacy_zh.html">简体中文</a>
+        <a href="privacy_zh_tw.html">繁體中文</a>
+        <a href="privacy_en.html">English</a>
+        <a href="privacy_ja.html">日本語</a>
+        <a href="privacy_ko.html">한국어</a>
+        <a href="privacy_de.html">Deutsch</a>
+        <a href="privacy_fr.html">Français</a>
+        <a href="privacy_it.html">Italiano</a>
+        <a href="privacy_ru.html">Русский</a>
+        <a href="privacy_in.html">हिन्दी</a>
+        <a href="privacy_ms.html">Melayu</a>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // 1. 获取浏览器语言并规范化（转为小写并替换下划线）
+        const userLang = (navigator.language || navigator.userLanguage).toLowerCase().replace('-', '_');
+
+        // 2. 定义语言映射关系
+        // 键是浏览器标识的前缀，值是对应的文件名后缀
+        const langMap = {
+            'zh_cn': 'zh',
+            'zh': 'zh',
+            'zh_tw': 'zh_tw',
+            'zh_hk': 'zh_tw',
+            'en': 'en',
+            'ja': 'ja',
+            'ko': 'ko',
+            'de': 'de',
+            'fr': 'fr',
+            'it': 'it',
+            'ru': 'ru',
+            'hi': 'in', // 印度语通常对应 privacy_in.html
+            'ms': 'ms'
+        };
+
+        // 3. 匹配逻辑
+        let targetSuffix = 'en'; // 默认回退到英文
+
+        // 精确匹配 (如 zh_tw)
+        if (langMap[userLang]) {
+            targetSuffix = langMap[userLang];
+        } else {
+            // 模糊匹配 (如 en-US 取 en)
+            const shortLang = userLang.split('_')[0];
+            if (langMap[shortLang]) {
+                targetSuffix = langMap[shortLang];
+            }
+        }
+
+        // 4. 执行跳转
+        const targetUrl = `privacy_${targetSuffix}.html`;
+        
+        // 提示用户正在跳转
+        document.getElementById('status').innerText = "Redirecting...";
+        
+        // 使用 replace 确保用户点击“返回”时不会陷入死循环
+        window.location.replace(targetUrl);
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BlueKeyboard Rechtliche Bestimmungen und Datenschutzrichtlinie</title>
+    <style>
+        :root {
+            --primary-blue: #1A73E8;
+            --text-main: #1F1F1F;
+            --text-sub: #5F6368;
+            --bg-light: #FFFFFF; /* Vollbildschirm verwendet normalerweise reine weiße Hintergründe */
+            --divider: #F0F0F0;
+        }
+
+        /* Anpassung an den Dunkelmodus (wenn Android WebView automatisch dem System folgt) */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-blue: #8AB4F8;
+                --text-main: #E8EAED;
+                --text-sub: #9AA0A6;
+                --bg-light: #121212;
+                --divider: #303134;
+            }
+        }
+
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background: var(--bg-light);
+            margin: 0;
+            padding: 0; /* Körperabstände entfernen */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 100%; /* Volle Breite */
+            box-sizing: border-box;
+            padding: 20px 16px; /* Seitlicher Abstand von 16dp Mobilstandard */
+            margin: 0;
+        }
+
+        .header {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            font-size: 22px;
+            margin: 0 0 8px 0;
+        }
+
+        .version-tag {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            color: var(--text-main);
+            font-size: 17px;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 16px;
+            background: var(--primary-blue);
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        p, li {
+            color: var(--text-sub);
+            font-size: 14px;
+            margin-bottom: 12px;
+            text-align: justify; /* Blocksatz für professionelles Aussehen */
+        }
+
+        ul { padding-left: 20px; }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid var(--divider);
+        }
+
+        .highlight { color: var(--primary-blue); font-weight: 600; }
+
+        /* Optimierung für Mobile Long-Press-Auswahl */
+        * { -webkit-tap-highlight-color: transparent; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Datenschutzrichtlinie & Nutzungsbedingungen</h1>
+        <p style="font-size: 12px; margin: 0;">Letzte Aktualisierung: 25. Januar 2026</p>
+    </div>
+
+    <section>
+        <h2>1. Datenerfassung & Datenschutz</h2>
+        <p>Wir nehmen Ihren Datenschutz sehr ernst. In <strong>BlueKeyboard</strong>:</p>
+        <ul>
+            <li><span class="highlight">Lokale verschlüsselte Speicherung:</span> Ihr Master-Passwort und alle Bluetooth-Verbindungsdaten werden lokal auf Ihrem Gerät mit <span class="highlight">SQLCipher</span> verschlüsselt gespeichert.</li>
+            <li><span class="highlight">Kein Datentransfer:</span> Die App hat keine Remote-Datenupload-Funktion, sodass wir nicht auf Ihre persönlichen Datenschutzdaten zugreifen können.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Erläuterung der Berechtigungsanfrage</h2>
+        <ul>
+            <li><strong>Bluetooth:</strong> Erforderliche Berechtigung. Wird verwendet, um Bluetooth HID-Geräte zu suchen und zu verbinden (Simulation einer physischen Tastatur).</li>
+            <li><strong>Biometrie:</strong> Optionale Berechtigung. Wird nur zum lokalen Entsperren der App verwendet, wir greifen nicht auf Ihre Fingerabdruck- oder Gesichtserkennungs-Rohdaten zu.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Haftungsausschluss</h2>
+        <p>Die von der App bereitgestellte Bluetooth-HID-Simulationsfunktion wird durch Hardware-Kompatibilität beeinflusst. Benutzer müssen während der Nutzung potenzielle Eingaberisiken durch Verbindungsabbrüche oder andere höhere Gewalt tragen.</p>
+        <p><span class="highlight">Wichtiger Hinweis:</span> Aufgrund der Ende-zu-Ende-Verschlüsselung kann diese Software Ihnen bei Verlust Ihres Master-Passworts nicht beim Wiederherstellen der verschlüsselten Daten helfen.</p>
+    </section>
+
+    <div class="footer">
+        &copy; 2026 BlueKeyboard. All Rights Reserved.
+    </div>
+</div>
+
+</body>
+</html>

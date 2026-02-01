@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BlueKeyboard Condizioni Legali e Politica sulla Privacy</title>
+    <style>
+        :root {
+            --primary-blue: #1A73E8;
+            --text-main: #1F1F1F;
+            --text-sub: #5F6368;
+            --bg-light: #FFFFFF; /* Schermo intero di solito usa sfondo bianco puro */
+            --divider: #F0F0F0;
+        }
+
+        /* Adattamento alla modalità scura (quando WebView Android segue automaticamente il sistema) */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-blue: #8AB4F8;
+                --text-main: #E8EAED;
+                --text-sub: #9AA0A6;
+                --bg-light: #121212;
+                --divider: #303134;
+            }
+        }
+
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background: var(--bg-light);
+            margin: 0;
+            padding: 0; /* Rimuovere i margini del corpo */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 100%; /* Larghezza completa */
+            box-sizing: border-box;
+            padding: 20px 16px; /* Spaziatura laterale di 16dp standard mobile */
+            margin: 0;
+        }
+
+        .header {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            font-size: 22px;
+            margin: 0 0 8px 0;
+        }
+
+        .version-tag {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            color: var(--text-main);
+            font-size: 17px;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 16px;
+            background: var(--primary-blue);
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        p, li {
+            color: var(--text-sub);
+            font-size: 14px;
+            margin-bottom: 12px;
+            text-align: justify; /* Allineamento giustificato per un aspetto professionale */
+        }
+
+        ul { padding-left: 20px; }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid var(--divider);
+        }
+
+        .highlight { color: var(--primary-blue); font-weight: 600; }
+
+        /* Ottimizzazione per la selezione con pressione prolungata su dispositivi mobili */
+        * { -webkit-tap-highlight-color: transparent; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Politica sulla Privacy & Termini di Servizio</h1>
+        <p style="font-size: 12px; margin: 0;">Ultimo Aggiornamento: 25 gennaio 2026</p>
+    </div>
+
+    <section>
+        <h2>1. Raccolta Dati & Privacy</h2>
+        <p>Consideriamo molto importante la vostra privacy. In <strong>BlueKeyboard</strong>:</p>
+        <ul>
+            <li><span class="highlight">Archiviazione criptata locale:</span> La password principale e tutti i dati di connessione Bluetooth vengono archiviati localmente sul dispositivo in forma crittografata utilizzando <span class="highlight">SQLCipher</span>.</li>
+            <li><span class="highlight">Nessun caricamento dati:</span> L'app non dispone di alcuna funzionalità di caricamento dati remota, quindi non possiamo accedere ai vostri dati personali.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Spiegazione delle richieste di autorizzazione</h2>
+        <ul>
+            <li><strong>Bluetooth:</strong> Autorizzazione necessaria. Usata per cercare e connettersi ai dispositivi HID Bluetooth (simulazione di tastiera fisica).</li>
+            <li><strong>Biométrica:</strong> Autorizzazione opzionale. Utilizzata solo per sbloccare localmente l'app, non avremo accesso alle informazioni grezze delle impronte digitali o del riconoscimento facciale.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Dichiarazione di non responsabilità</h2>
+        <p>La funzione di simulazione Bluetooth HID fornita dall'app è influenzata dalla compatibilità hardware. Gli utenti devono sopportare i potenziali rischi di inserimento dati causati da interruzioni di connessione o altri fattori di forza maggiore durante l'utilizzo.</p>
+        <p><span class="highlight">Avviso Importante:</span> A causa della crittografia end-to-end, se si perde la password principale, questo software non potrà aiutarvi a recuperare i dati crittografati.</p>
+    </section>
+
+    <div class="footer">
+        &copy; 2026 BlueKeyboard. All Rights Reserved.
+    </div>
+</div>
+
+</body>
+</html>
